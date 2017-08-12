@@ -28,6 +28,7 @@ declare namespace hooks {
     params?: any;
     id?: any;
     data?: T;
+    error?: any;
     result?: T;
   }
 
