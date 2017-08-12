@@ -24,7 +24,7 @@ declare namespace hooks {
     readonly service?: feathers.Service<S>;
     readonly path?: string;
     readonly method?: 'find' | 'get' | 'create' | 'update' | 'patch' | 'remove';
-    readonly type: 'before' | 'after' | 'error';
+    readonly type?: 'before' | 'after' | 'error';
     params?: any;
     id?: any;
     data?: T;
