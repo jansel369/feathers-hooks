@@ -19,13 +19,16 @@ declare namespace hooks {
     <T>(hook: HookProps<T>): Promise<any> | void;
   }
 
-  interface HookProps<T> {
-    method?: string;
-    type: 'before' | 'after' | 'error';
+  interface HookProps<T = any, S = T> {
+    readonly app?: feathers.Application;
+    readonly service?: feathers.Service<S>;
+    readonly path?: string;
+    readonly method?: 'find' | 'get' | 'create' | 'update' | 'patch' | 'remove';
+    readonly type: 'before' | 'after' | 'error';
     params?: any;
+    id?: any;
     data?: T;
     result?: T;
-    app?: feathers.Application;
   }
 
   interface HookMap {
